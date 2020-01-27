@@ -263,4 +263,20 @@ public interface WebDriverEventListener {
    * @param text    - {@link String} object extracted from respective {@link WebElement}
    */
   void afterGetText(WebElement element, WebDriver driver, String text);
+
+  /**
+   * This action will be performed each time before {@link org.openqa.selenium.WebDriver.TargetLocator#frame(String)}
+   *
+   * @param frameXPath The XPath of the frame
+   * @param driver WebDriver
+   */
+  void beforeSwitchToFrame(String frameXPath, WebDriver driver);
+
+  /**
+   * This action will be performed each time after {@link org.openqa.selenium.WebDriver.TargetLocator#frame(String)}
+   *
+   * @param frameXPath The XPath of the frame
+   * @param driver WebDriver
+   */
+  void afterSwitchToFrame(String frameXPath, WebDriver driver);
 }

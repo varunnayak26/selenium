@@ -709,6 +709,14 @@ public class EventFiringWebDriver implements WebDriver, JavascriptExecutor, Take
     }
 
     @Override
+    public WebDriver frame(String frameXPath, WebElement frameElement) {
+      dispatcher.beforeSwitchToFrame(frameXPath, driver);
+      WebDriver driverToReturn = targetLocator.frame(frameElement);
+      dispatcher.afterSwitchToFrame(frameXPath, driver);
+      return driverToReturn;
+    }
+
+    @Override
     public WebDriver parentFrame() {
       return targetLocator.parentFrame();
     }

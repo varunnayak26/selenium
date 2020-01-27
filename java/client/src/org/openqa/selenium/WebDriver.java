@@ -388,6 +388,8 @@ public interface WebDriver extends SearchContext {
      */
     WebDriver frame(WebElement frameElement);
 
+    WebDriver frame(String frameXPath, WebElement frameElement);    
+
     /**
      * Change focus to the parent context. If the current context is the top level browsing context,
      * the context remains unchanged.
